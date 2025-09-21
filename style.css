@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+   background: linear-gradient(90deg,#001024, #002555, #001024);
+   margin: 0;
+   font-family: "Montserrat";
+    color: #fff;
+}
+
+.container{
+    max-width: 1160.58px;
+    /* border: 8px solid #fff; */
+    margin: 0 auto;
+}
+
+
+header{
+    padding: 50px 0;
+}
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+nav a:hover{
+    color: #ffe251;
+    /*font-weight: 600;*/
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    width: 540px;
+    /* border: 2px solid #ffff00; */
+    font-weight: 900;
+    line-height: 90%;
+    margin: 0;
+}
+
+.Travel-section{
+    background-image: url(./images/people-background.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+
+
+
+.Travel-section-text{
+    background: #ff0000;
+    width: 477px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 27px 13px;
+    border-radius: 8px;
+    margin-top: 24px;
+    margin-bottom: 37px;
+}
+
+
+
+.proposal-courses{
+    /* border: 2px solid pink; */
+    width: 580px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.proposal-courses a{
+    background: #ffe251;
+    padding: 5px 30px 6px 45px;
+    border-radius: 8.6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20.7px;
+    font-weight: 600;
+    line-height: 140%;
+    user-select: none;
+}
+
+
