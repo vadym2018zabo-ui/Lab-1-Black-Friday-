@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Resource API
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /resource:
+    post:
+      summary: Створити ресурс
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '201': { description: Створено }
+        '400': { description: Некоректні дані }
+    get:
+      summary: Отримати всі ресурси
+      responses:
+        '200':
+          description: Список ресурсів
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Resource'
+  /resource/{id}:
+    get:
+      summary: Отримати ресурс за ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Ресурс знайдено }
+        '404': { description: Не знайдено }
+    put:
+      summary: Оновити ресурс
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '200': { description: Оновлено }
+        '404': { description: Не знайдено }
+    delete:
+      summary: Видалити ресурс
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Видалено }
+        '404': { description: Не знайдено }
+  /health:
+    get:
+      summary: Перевірка стану
+      responses:
+        '200':
+          description: Сервіс працює
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+components:
+  schemas:
+    Resource:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        value: { type: number }
+    ErrorResponse:
+      type: object
+      properties:
+        error: { type: string }
+        message: { type: string }
+    HealthResponse:
+      type: object
+      properties:
+        status: { type: string }
