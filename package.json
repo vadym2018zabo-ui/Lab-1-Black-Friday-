@@ -1,0 +1,17 @@
+{
+  "name": "error-handling-lab",
+  "version": "1.0.0",
+  "description": "- Ідемпотентність: повторні POST з тим самим `Idempotency-Key` повертають той самий результат.\r - Кожна відповідь містить заголовок `X-Request-Id`; у тілі помилки він дублюється.\r - При перевищенні ліміту повертається `429` з `Retry-After`; клієнт чекає і повторює.\r - Клієнт застосовує таймаут (`AbortController`) і обмежену кількість ретраїв із експоненційним backoff та джитером.\r - На фронті реалізований degraded mode (банер/стейт після N поспіль 500ів, тимчасово дизейблені кнопки).\r - `GET /health` повертає `{\"status\": \"ok\"}`.",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}
